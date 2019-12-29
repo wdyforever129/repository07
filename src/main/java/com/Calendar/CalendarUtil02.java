@@ -146,7 +146,7 @@ public class CalendarUtil02 {
         return 0;//大于9点交易日今天截止日期
     }
 
-    public Date getWeekDate(int week, int day,Calendar calendar) {
+    public Date getWeekDate(int week, int day, Calendar calendar) {
         //最近一周
         calendar.setTime(new Date());
         calendar.add(Calendar.WEEK_OF_YEAR, -week);
@@ -177,17 +177,18 @@ public class CalendarUtil02 {
 
         //获取前多少周的交易日
         if (date.endsWith("W")) {
-            int startDay =1;
-            int endDay = 5*days;
-            Date weekStartDate = getWeekDate(days, startDay,calendar);
+            int startDay = 1;
+            int endDay = 5 * days;
+            Date weekStartDate = getWeekDate(days, startDay, calendar);
             Date weekEndDate = getWeekDate(days, endDay, calendar);
+            System.out.println(weekStartDate + " -- " + weekEndDate);
         }
 
         //获取前第几周的交易日
         if (date.endsWith("SW")) {
-            int startDay =1;
+            int startDay = 1;
             int endDay = 5;
-            Date weekStartDate = getWeekDate(days, startDay,calendar);
+            Date weekStartDate = getWeekDate(days, startDay, calendar);
             Date weekEndDate = getWeekDate(days, endDay, calendar);
         }
     }
